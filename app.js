@@ -28,12 +28,12 @@ async function getFiles(dir) {
 }
     
 
-getFiles("exports")
+getFiles("images")
         .then(files => {
             files.forEach(function (file) {
                 
                 var image = sizeOf(file);
-                //console.log(file + " genişliği: " +image.width + " yüksekliği: " + image.height);  
+                //console.log(file + " width: " +image.width + " height: " + image.height);  
 
                 //uploadPlus
                 if( image.width<=plus_width && image.height<=plus_height ){
@@ -49,13 +49,13 @@ getFiles("exports")
             });
 
         console.log("********************");
-        console.log("-> XR icin yuklenecek "+arrXR.length+" fotograf var");
+        console.log("-> there are "+arrXR.length+" photos to upload for iPhone XR / "+XR_width+"x"+XR_height);
         console.log(arrXR);
         console.log("------");
-        console.log("-> 8 Plus icin yuklenecek "+arrPlus.length+" fotograf var");
+        console.log("-> there are "+arrPlus.length+" photos to upload for 8 Plus / "+plus_width+"x"+plus_height);
         console.log(arrPlus);
         console.log("------");
-        console.log("-> uyumsuz "+arrFail.length+" fotograf var");
+        console.log("-> There are "+arrFail.length+" photos with errors");
         console.log(arrFail);
         console.log("********************");
         })
